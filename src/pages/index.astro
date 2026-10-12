@@ -34,7 +34,7 @@ const poems = [
       { pashto: "هسې نه چې واحدي ده له عجزه", urdu: "اس کی وحدانیت کسی عجز سے نہیں", english: "His sole oneness is not caused by any failure" },
       { pashto: "په واحد وجود بیسیار دی رب زما", urdu: "ایک وجود میں وہ بے شمار ہے، میرا رب", english: "Omnipotent in His oneness is my Lord." }
     ],
-    source: "Pashto poem by Rahman Baba, from the Diwan (Hamd section). English translation 'Divine Attributes' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba (2017), used with the translator's permission. Urdu rendering by Dastar."
+    source: "Pashto ghazal by Rahman Baba, from the Diwan (Hamd section). English translation 'Divine Attributes' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba. Urdu rendering by Dastar."
   },
   {
     poetPashto: "رحمان بابا",
@@ -69,7 +69,7 @@ const poems = [
       { pashto: "که بل بد کاندي ته ښه ور سره وکړه", urdu: "ہر دشمنی کا جواب نیکی سے دے", english: "Every hostile act exchange with righteous goodwill;" },
       { pashto: "هر يو نخل چې ميوه لري سنګ سار شي", urdu: "ہر پھل دار درخت پر پتھر برسائے جاتے ہیں", english: "Each fruit tree bearing fruit is showered with stones." }
     ],
-    source: "Pashto poem by Rahman Baba, from the Diwan. English translation 'Wayfarer's Refrain' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba (2017), used with the translator's permission. Urdu rendering by Dastar."
+    source: "Pashto ghazal by Rahman Baba, from the Diwan. English translation 'Wayfarer's Refrain' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba. Urdu rendering by Dastar."
   }
 ];
 
@@ -133,17 +133,69 @@ const relatedPoems = [
   .theme-toggle { font-family: var(--f-ui); font-size: 12px; font-weight: 500; background: transparent; border: 1px solid var(--rule-strong); color: var(--fg-muted); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
   .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
   main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; }
+
+  .wip-banner {
+    background: var(--warm-soft);
+    border: 1px solid var(--warm);
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    font-family: var(--f-ui);
+    font-size: 13px;
+    color: var(--warm);
+    line-height: 1.55;
+  }
+  .wip-banner strong {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .wip-banner .wip-body { color: var(--fg); }
+
   .intro-eyebrow { font-family: var(--f-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-faint); font-weight: 600; margin-bottom: 10px; }
   .intro-title { font-family: var(--f-display); font-size: 40px; font-weight: 500; font-style: italic; margin: 0 0 10px; line-height: 1.1; color: var(--fg); }
   .intro-blurb { font-size: 16px; color: var(--fg-muted); max-width: 720px; margin: 0 0 36px; line-height: 1.65; }
   .poem-section { margin-bottom: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
   .poem-section:first-of-type { padding-top: 0; border-top: 0; }
-  .poem-head { padding-bottom: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
-  .poet-line { font-family: var(--f-ui); font-size: 13px; color: var(--fg-muted); margin-bottom: 12px; font-weight: 500; }
+
+  .poem-head {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .poet-line { font-family: var(--f-ui); font-size: 13px; color: var(--fg-muted); margin-bottom: 16px; font-weight: 500; }
   .poet-ref { color: var(--warm); text-decoration: none; font-weight: 600; }
-  .poem-title { font-family: var(--f-display); margin: 0; color: var(--fg); }
-  .nasta-title { display: block; font-family: var(--f-nastaliq); font-weight: 600; direction: rtl; font-size: 26px; line-height: 1.6; color: var(--accent-ink); margin-bottom: 6px; }
-  .eng-title { display: block; font-size: 32px; font-weight: 500; font-style: italic; line-height: 1.15; }
+
+  .title-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+  .eng-title {
+    font-family: var(--f-display);
+    font-size: 32px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--fg);
+    text-align: left;
+  }
+  .nasta-title {
+    font-family: var(--f-nastaliq);
+    font-weight: 600;
+    direction: rtl;
+    font-size: 28px;
+    line-height: 1.6;
+    color: var(--accent-ink);
+    margin: 0;
+    text-align: right;
+  }
+
   .meta-chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { font-family: var(--f-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 10px; border-radius: 4px; background: var(--accent-soft); color: var(--accent-ink); }
   .chip.warm { background: var(--warm-soft); color: var(--warm); }
@@ -220,6 +272,7 @@ const relatedPoems = [
     .intro-title { font-size: 28px; }
     .eng-title { font-size: 24px; }
     .nasta-title { font-size: 22px; }
+    .title-grid { grid-template-columns: 1fr; gap: 10px; }
     .poem-wrap { padding: 20px 18px; }
     .poem-header-row, .couplet,
     .poem-wrap.show-urdu .poem-header-row,
@@ -262,26 +315,30 @@ const relatedPoems = [
 </header>
 
 <main>
+  <div class="wip-banner">
+    <strong>Work in progress</strong>
+    <div class="wip-body">
+      Dastar is just beginning. More poems, more poets, and more features are
+      coming soon. Thank you for visiting during these early days.
+    </div>
+  </div>
+
   <div class="intro-eyebrow">Featured today</div>
-  <h1 class="intro-title">Two poems by Rahman Baba</h1>
+  <h1 class="intro-title">Two ghazals by Rahman Baba</h1>
   <p class="intro-blurb">
     From the Diwan of Rahman Baba, the most beloved Pashto Sufi poet of the
     17th century. Each couplet is shown in English beside the original Pashto.
-    Click <em>Show Urdu</em> on any poem to add an Urdu translation column.
-    English translations are by Fayez M. Sahibzada, from
-    <em>Mystical Reflections: Selections from the Poetry of Rahman Baba</em>
-    (2017), used with his permission.
+    Click <em>Show Urdu</em> on any ghazal to add an Urdu translation column.
+    English translations are by Fayez M. Sahibzada, from his book <em>Mystical Reflections: Selections from the Poetry of Rahman Baba</em>.
   </p>
 
   {poems.map((poem, pi) => (
     <section class="poem-section">
       <div class="poem-head">
-        <div>
-          <div class="poet-line">by <a href="#" class="poet-ref">{poem.poetRoman}</a> &middot; {poem.poetYears}</div>
-          <h2 class="poem-title">
-            <span class="nasta-title">{poem.titlePashto}</span>
-            {poem.titleEnglish && <span class="eng-title">{poem.titleEnglish}</span>}
-          </h2>
+        <div class="poet-line">by <a href="#" class="poet-ref">{poem.poetRoman}</a> &middot; {poem.poetYears}</div>
+        <div class="title-grid">
+          <h2 class="eng-title">{poem.titleEnglish}</h2>
+          <h2 class="nasta-title">{poem.titlePashto}</h2>
         </div>
         <div class="meta-chips">
           <span class="chip">{poem.form}</span>
@@ -332,7 +389,7 @@ const relatedPoems = [
         literary and spiritual life.
       </p>
       <div class="poet-stats">
-        <div class="stat"><strong>2</strong><span>Poems</span></div>
+        <div class="stat"><strong>2</strong><span>Ghazals</span></div>
         <div class="stat"><strong>3</strong><span>Scripts</span></div>
         <div class="stat"><strong>0</strong><span>Recitations</span></div>
       </div>
@@ -353,7 +410,7 @@ const relatedPoems = [
           </li>
         ))}
       </ul>
-      <a href="#" class="see-all">See all 343 poems</a>
+      <a href="#" class="see-all">More ghazals coming soon</a>
     </aside>
   </div>
 </main>
@@ -365,7 +422,7 @@ const relatedPoems = [
       <span class="foot-roman">Dastar</span>
     </div>
     <p class="foot-tag">A library of Pashto literature</p>
-    <p class="foot-sub">Est. 2026 &middot; English translations by Fayez M. Sahibzada, used with permission</p>
+    <p class="foot-sub">A work in progress &middot; English translations by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba</p>
   </div>
 </footer>
 
