@@ -1,0 +1,410 @@
+---
+// src/pages/index.astro
+const poems = [
+  {
+    poetPashto: "رحمان بابا",
+    poetRoman: "Rahman Baba",
+    poetYears: "c. 1653 – 1711",
+    titlePashto: "ګوره هسې کردګار دی رب زما",
+    titleEnglish: "Divine Attributes",
+    form: "Hamd",
+    era: "17th c.",
+    theme: "Devotional",
+    lines: [
+      { pashto: "ګوره هسې کردګار دی رب زما", urdu: "دیکھ، میرا رب ایسا خالق ہے", english: "Unsurpassed as the creator is my Lord" },
+      { pashto: "چې صاحب د کل اختیار دی رب زما", urdu: "جو ہر اختیار کا مالک ہے، میرا رب", english: "Supreme owner in His choice is my Lord." },
+      { pashto: "همګي بزرګواران چې څوک یې وايي", urdu: "جتنے بھی بزرگ کہلاتے ہیں", english: "Of the awe-inspiring beings in existence" },
+      { pashto: "تر همه و بزرګوار دی رب زما", urdu: "ان سب سے بڑا ہے میرا رب", english: "Most exalted of them all is my Lord." },
+      { pashto: "نه یې هېڅ حاجت په چا باندې موقوف دی", urdu: "اس کی کوئی حاجت کسی پر منحصر نہیں", english: "Free from all demanding mortal needs is He" },
+      { pashto: "نه د هېچا منت بار دی رب زما", urdu: "نہ کسی کے احسان کا بوجھ ہے میرا رب", english: "Obligation does He owe no one, my Lord." },
+      { pashto: "له نېستۍ یې د هستۍ صورت پیدا کړ", urdu: "اس نے عدم سے وجود کی صورت بنائی", english: "Out of nothingness all entities He made" },
+      { pashto: "هسې رنګ پروردګار دی رب زما", urdu: "ایسا شانِ پروردگار ہے میرا رب", english: "Such a cherishing provider is my Lord." },
+      { pashto: "هم صانع دی د همه و مصنوعاتو", urdu: "وہ ہر مخلوق کا صانع بھی ہے", english: "He's the maker who has fashioned all creation" },
+      { pashto: "هم سامع د هر ګفتار دی رب زما", urdu: "اور ہر کلام کا سامع ہے میرا رب", english: "Every utterance is deciphered by my Lord." },
+      { pashto: "چې یې هېچېرې نه مثل نه مثال شته", urdu: "جس کی کوئی مثل اور مثال نہیں", english: "Neither parable nor model can describe Him" },
+      { pashto: "د هغو عطرو عطار دی رب زما", urdu: "وہ خوشبوؤں کا عطار ہے میرا رب", english: "A rare quintessential fragrance is my Lord." },
+      { pashto: "هر تعمیر چې د دنیا او د عقبا دی", urdu: "دنیا اور آخرت کی ہر عمارت کا", english: "For each worldly and eternal restitution" },
+      { pashto: "د همه واړو معمار دی رب زما", urdu: "واحد معمار ہے میرا رب", english: "The chief architect redresser is my Lord." },
+      { pashto: "خواننده د نا نوېسو صحیفو دی", urdu: "ان صحیفوں کا پڑھنے والا جو لکھے نہیں گئے", english: "He's the reader of the unrecorded parchments" },
+      { pashto: "داننده د هر اسرار دی رب زما", urdu: "ہر راز کا جاننے والا میرا رب", english: "All the secrets lie uncovered to my Lord." },
+      { pashto: "که ظاهر دي که باطن دي که مابین دي", urdu: "چاہے ظاہر ہو، باطن ہو، یا درمیان", english: "Every thing that is apparent or lies covert" },
+      { pashto: "له همه و خبردار دی رب زما", urdu: "سب سے باخبر ہے میرا رب", english: "Well aware of their existence is my Lord." },
+      { pashto: "شریک نه لري په خپلې پادشاهۍ کې", urdu: "اپنی بادشاہی میں اس کا کوئی شریک نہیں", english: "In His kingship does He have no other partners" },
+      { pashto: "بې شریکه شهریار دی رب زما", urdu: "بے شریک بادشاہ ہے میرا رب", english: "Reigning monarch without cohorts is my Lord." },
+      { pashto: "هسې نه چې واحدي ده له عجزه", urdu: "اس کی وحدانیت کسی عجز سے نہیں", english: "His sole oneness is not caused by any failure" },
+      { pashto: "په واحد وجود بیسیار دی رب زما", urdu: "ایک وجود میں وہ بے شمار ہے، میرا رب", english: "Omnipotent in His oneness is my Lord." }
+    ],
+    source: "Pashto poem by Rahman Baba, from the Diwan (Hamd section). English translation 'Divine Attributes' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba (2017), used with the translator's permission. Urdu rendering by Dastar."
+  },
+  {
+    poetPashto: "رحمان بابا",
+    poetRoman: "Rahman Baba",
+    poetYears: "c. 1653 – 1711",
+    titlePashto: "کر د ګلو کړه",
+    titleEnglish: "Wayfarer's Refrain",
+    form: "Ghazal",
+    era: "17th c.",
+    theme: "Sufi",
+    lines: [
+      { pashto: "کر د ګلو کړه چې سیمه دې ګلزار شي", urdu: "پھول بو، تاکہ تیری زمین گلزار بن جائے", english: "Plant flowers so your field becomes a garden;" },
+      { pashto: "اغزي مه کره په پښو کې به دې خار شي", urdu: "کانٹے مت بو، ورنہ تیرے پاؤں کو زخم لگیں گے", english: "Not wounding thorns to lacerate your feet." },
+      { pashto: "ته چې په بل غشیو ولې هسې پوه شه", urdu: "اگر تو دوسرے پر تیر چلائے، تو یہ یاد رکھ", english: "If you shoot barbs at others, heed this warning," },
+      { pashto: "چې هم دا غشی به ستا په لور ګذار شي", urdu: "یہی تیر پلٹ کر تیری راہ میں آ گریں گے", english: "Those arrows may in your own path descend." },
+      { pashto: "کوهي مه کنه د بل سړي په لار کې", urdu: "دوسرے کی راہ میں گڑھا مت کھود", english: "Nor dig deep ditches in a traveler's pathway" },
+      { pashto: "چرې ستا به د کوهي په غاړه لار شي", urdu: "شاید اتفاق سے تو خود اس میں جا گرے", english: "Perhaps, you may plunge into them by chance." },
+      { pashto: "و هر چا ته چې په خوارو سترګو ګورې", urdu: "جس کو تو حقارت کی نگاہ سے دیکھتا ہے", english: "Each person that you view with dark resentment," },
+      { pashto: "لا وړومبی به ستا صورت تر هغه خوار شي", urdu: "تیرا اپنا چہرہ پہلے پستی میں بدل جائے گا", english: "Your own image to baseness will transform." },
+      { pashto: "ادم زاد په معنا واړه يو صورت دی", urdu: "تمام انسان ایک ہی صورت رکھتے ہیں", english: "All humans have in form the same likeness" },
+      { pashto: "هر چې بل ازاروي هغه ازار شي", urdu: "جو دوسرے کو ستائے گا، خود ستایا جائے گا", english: "One who torments someone else will be tormented." },
+      { pashto: "که ته نه کوې نظر د چا په عیب", urdu: "اگر تو دوسروں کے عیبوں سے چشم پوشی کرے", english: "If you overlook the shortcomings of others," },
+      { pashto: "هر سړی به ستا د عیبو پرده دار شي", urdu: "ہر شخص تیرے عیبوں کو نظر انداز کرے گا", english: "Everyone will your own blemishes ignore." },
+      { pashto: "دهقان کر په لوړه زمکه باندې نه کا", urdu: "دانا کسان بلند زمین پر فصل نہیں بوتا", english: "The discerning farmer plants not on the high ground" },
+      { pashto: "سرکوزي کوه چې بڼ دې مرغزار شي", urdu: "عاجزی اختیار کر، تاکہ تیرا کھیت لہلہائے", english: "In humility your own meadow will thrive." },
+      { pashto: "د مات لوښي اواز کله ثابت خېژي", urdu: "ٹوٹے برتن کی آواز میں گونج نہیں ہوتی", english: "A fragmented vessel emanates no echo;" },
+      { pashto: "د هر چا عمل څرګند په خپل ګفتار شي", urdu: "ہر شخص کی اصل گفتگو سے کھل جاتی ہے", english: "Through your discourse is your true nature exposed." },
+      { pashto: "نن چې صبح ده روښانه لار صحیح کړه", urdu: "آج جب دن کا اجالا ہے، سیدھا راستہ اختیار کر", english: "Tread the right path while the daylight is in progress;" },
+      { pashto: "ناګهانه به دا صبحه شب تار شي", urdu: "اچانک رات کا دھاگا شروع ہو جاتا ہے", english: "For with sudden speed the thread of night begins." },
+      { pashto: "لږ يې مه ګڼه که هر څو ګناه لږ وي", urdu: "گناہ کتنے بھی چھوٹے ہوں، انہیں معمولی نہ سمجھ", english: "Though your sins may be minuscule don't ignore them," },
+      { pashto: "چې لږ لږ وبله جمع کړې بسیار شي", urdu: "وہ ایک پر ایک جمع ہو کر بہت ہو جاتے ہیں", english: "For they pile upon each other and increase." },
+      { pashto: "که بل بد کاندي ته ښه ور سره وکړه", urdu: "ہر دشمنی کا جواب نیکی سے دے", english: "Every hostile act exchange with righteous goodwill;" },
+      { pashto: "هر يو نخل چې ميوه لري سنګ سار شي", urdu: "ہر پھل دار درخت پر پتھر برسائے جاتے ہیں", english: "Each fruit tree bearing fruit is showered with stones." }
+    ],
+    source: "Pashto poem by Rahman Baba, from the Diwan. English translation 'Wayfarer's Refrain' by Fayez M. Sahibzada, from Mystical Reflections: Selections from the Poetry of Rahman Baba (2017), used with the translator's permission. Urdu rendering by Dastar."
+  }
+];
+
+const relatedPoems = [
+  { first: "د دنیا په مینه مه غولېږه", trans: "Do not be deceived by the world's love", form: "Ghazal" },
+  { first: "ژبه د غم سبب شوه", trans: "The tongue became the cause of sorrow", form: "Qita" },
+  { first: "عشق چې زما د زړه مېلمه شو", trans: "When love became a guest in my heart", form: "Ghazal" },
+  { first: "خاوره یم، خاورې ته به ځم", trans: "I am dust, and to dust I shall return", form: "Rubai" }
+];
+---
+
+<style is:global>
+  :root {
+    --bg: #faf7f0;
+    --paper: #ffffff;
+    --paper-2: #f5f1e6;
+    --fg: #1a1a1f;
+    --fg-muted: #5c5c66;
+    --fg-faint: #9a9aa5;
+    --accent: #2a5a8c;
+    --accent-ink: #1a3f68;
+    --accent-soft: #e6edf5;
+    --warm: #a04820;
+    --warm-soft: #f5e8dd;
+    --rule: #e5e0d1;
+    --rule-strong: #c8c3b4;
+    --f-display: 'Fraunces', Georgia, serif;
+    --f-body: 'Crimson Pro', Georgia, serif;
+    --f-nastaliq: 'Vazirmatn', 'Noto Naskh Arabic', 'Segoe UI', serif;
+    --f-ui: 'Inter', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1117;
+    --paper: #161a22;
+    --paper-2: #1c2029;
+    --fg: #ebe7dc;
+    --fg-muted: #a8a9b8;
+    --fg-faint: #6b6d80;
+    --accent: #8ab8e0;
+    --accent-ink: #c5deef;
+    --accent-soft: #1a2a3f;
+    --warm: #d08960;
+    --warm-soft: #3a2a1e;
+    --rule: #2a2e3a;
+    --rule-strong: #3f4350;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--f-body); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .mast { background: var(--paper); border-bottom: 1px solid var(--rule); padding: 14px 24px; position: sticky; top: 0; z-index: 10; }
+  .mast-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--fg); }
+  .wm-nasta { font-family: var(--f-nastaliq); font-weight: 600; font-size: 22px; color: var(--accent-ink); direction: rtl; }
+  .wm-divider { width: 1px; height: 22px; background: var(--rule-strong); display: inline-block; }
+  .wm-roman { font-family: var(--f-display); font-size: 22px; font-weight: 600; color: var(--fg); }
+  .primary { display: flex; gap: 24px; font-family: var(--f-ui); font-size: 13px; font-weight: 500; flex-wrap: wrap; }
+  .nav-link { color: var(--fg-muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+  .nav-link:hover, .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .theme-toggle { font-family: var(--f-ui); font-size: 12px; font-weight: 500; background: transparent; border: 1px solid var(--rule-strong); color: var(--fg-muted); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
+  .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; }
+  .intro-eyebrow { font-family: var(--f-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-faint); font-weight: 600; margin-bottom: 10px; }
+  .intro-title { font-family: var(--f-display); font-size: 40px; font-weight: 500; font-style: italic; margin: 0 0 10px; line-height: 1.1; color: var(--fg); }
+  .intro-blurb { font-size: 16px; color: var(--fg-muted); max-width: 720px; margin: 0 0 36px; line-height: 1.65; }
+  .poem-section { margin-bottom: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .poem-section:first-of-type { padding-top: 0; border-top: 0; }
+  .poem-head { padding-bottom: 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+  .poet-line { font-family: var(--f-ui); font-size: 13px; color: var(--fg-muted); margin-bottom: 12px; font-weight: 500; }
+  .poet-ref { color: var(--warm); text-decoration: none; font-weight: 600; }
+  .poem-title { font-family: var(--f-display); margin: 0; color: var(--fg); }
+  .nasta-title { display: block; font-family: var(--f-nastaliq); font-weight: 600; direction: rtl; font-size: 26px; line-height: 1.6; color: var(--accent-ink); margin-bottom: 6px; }
+  .eng-title { display: block; font-size: 32px; font-weight: 500; font-style: italic; line-height: 1.15; }
+  .meta-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-family: var(--f-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 10px; border-radius: 4px; background: var(--accent-soft); color: var(--accent-ink); }
+  .chip.warm { background: var(--warm-soft); color: var(--warm); }
+  .chip.plain { background: transparent; border: 1px solid var(--rule-strong); color: var(--fg-muted); }
+  .urdu-toggle-wrap { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+  .urdu-btn {
+    font-family: var(--f-ui);
+    font-size: 12px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--fg-muted);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .urdu-btn:hover { color: var(--warm); border-color: var(--warm); }
+  .urdu-btn.on { background: var(--warm); color: #fff; border-color: var(--warm); }
+  .urdu-btn .nasta { font-family: var(--f-nastaliq); font-weight: 600; font-size: 14px; }
+  .poem-wrap { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 28px 32px; }
+  .poem-header-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid var(--rule); }
+  .poem-wrap.show-urdu .poem-header-row { grid-template-columns: 1fr 1fr 1fr; }
+  .col-label { font-family: var(--f-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-faint); }
+  .col-label.rtl { text-align: right; }
+  .col-label.urdu-label { display: none; }
+  .poem-wrap.show-urdu .col-label.urdu-label { display: block; }
+  .couplet { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: baseline; padding: 14px 0; }
+  .poem-wrap.show-urdu .couplet { grid-template-columns: 1fr 1fr 1fr; }
+  .couplet:not(:last-child) { border-bottom: 1px dashed var(--rule); }
+  .couplet .line { margin: 0; min-width: 0; }
+  .couplet .urdu { font-family: var(--f-nastaliq); font-weight: 400; font-size: 19px; line-height: 1.9; color: var(--warm); direction: rtl; text-align: right; display: none; }
+  .poem-wrap.show-urdu .couplet .urdu { display: block; }
+  .couplet .english { font-family: var(--f-body); font-size: 20px; line-height: 1.55; color: var(--fg); font-weight: 400; }
+  .couplet .pashto { font-family: var(--f-nastaliq); font-weight: 500; font-size: 23px; line-height: 1.9; color: var(--accent-ink); direction: rtl; text-align: right; }
+  .source { margin-top: 18px; padding: 12px 18px; background: var(--paper-2); border-left: 3px solid var(--warm); border-radius: 0 6px 6px 0; font-family: var(--f-ui); font-size: 12px; color: var(--fg-muted); line-height: 1.65; }
+  .source strong { color: var(--fg); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10px; margin-right: 10px; }
+  .below { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .side-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 24px; }
+  .side-card h3 { font-family: var(--f-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-faint); margin: 0 0 18px; font-weight: 600; }
+  .poet-name { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .pname-nasta { font-family: var(--f-nastaliq); font-weight: 600; font-size: 20px; color: var(--accent-ink); direction: rtl; }
+  .pname-roman { font-family: var(--f-display); font-size: 22px; font-weight: 600; color: var(--fg); }
+  .poet-years { font-family: var(--f-ui); font-size: 12px; color: var(--fg-faint); margin-bottom: 14px; }
+  .poet-bio { font-size: 14px; line-height: 1.7; color: var(--fg-muted); margin-bottom: 18px; }
+  .poet-stats { display: flex; gap: 24px; padding-top: 16px; border-top: 1px solid var(--rule); font-family: var(--f-ui); flex-wrap: wrap; }
+  .poet-stats .stat { display: flex; flex-direction: column; gap: 2px; }
+  .poet-stats strong { font-family: var(--f-display); font-size: 22px; font-weight: 600; color: var(--accent); }
+  .poet-stats span { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-faint); font-weight: 500; }
+  .related ul { list-style: none; padding: 0; margin: 0; }
+  .related li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .related li:first-child { padding-top: 0; }
+  .related li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .related a { text-decoration: none; color: var(--fg); display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; }
+  .related a:hover .first-line { color: var(--accent); }
+  .first-line { font-family: var(--f-nastaliq); font-weight: 500; font-size: 17px; direction: rtl; text-align: right; color: var(--accent-ink); line-height: 1.7; }
+  .trans { font-family: var(--f-body); font-size: 13px; color: var(--fg-muted); text-align: right; }
+  .form-badge { font-family: var(--f-ui); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-faint); padding: 4px 8px; border: 1px solid var(--rule-strong); border-radius: 4px; white-space: nowrap; }
+  .see-all { display: inline-block; margin-top: 18px; font-family: var(--f-ui); font-size: 12px; font-weight: 500; color: var(--accent); text-decoration: none; }
+  footer { margin-top: 60px; padding: 36px 24px; border-top: 1px solid var(--rule); background: var(--paper); }
+  .foot-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .foot-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .foot-nasta { font-family: var(--f-nastaliq); font-weight: 600; font-size: 20px; color: var(--accent-ink); direction: rtl; }
+  .foot-roman { font-family: var(--f-display); font-size: 18px; font-weight: 600; color: var(--fg); }
+  .foot-tag { font-family: var(--f-ui); font-size: 13px; color: var(--fg-muted); margin: 0 0 4px; font-weight: 500; }
+  .foot-sub { font-family: var(--f-ui); font-size: 11px; color: var(--fg-faint); margin: 0; }
+
+  @media (max-width: 720px) {
+    main { padding: 24px 16px 50px; }
+    .mast { padding: 12px 16px; }
+    .primary { font-size: 12px; gap: 14px; order: 3; width: 100%; justify-content: center; }
+    .intro-title { font-size: 28px; }
+    .eng-title { font-size: 24px; }
+    .nasta-title { font-size: 22px; }
+    .poem-wrap { padding: 20px 18px; }
+    .poem-header-row, .couplet,
+    .poem-wrap.show-urdu .poem-header-row,
+    .poem-wrap.show-urdu .couplet { grid-template-columns: 1fr; gap: 6px; }
+    .col-label.rtl { text-align: right; }
+    .couplet .pashto { font-size: 21px; }
+    .couplet .urdu { font-size: 17px; }
+    .couplet .english { font-size: 16px; }
+    .below { grid-template-columns: 1fr; }
+  }
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dastar - Pashto Literature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap">
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-inner">
+    <a href="#" class="wordmark">
+      <span class="wm-nasta">دستار</span>
+      <span class="wm-divider"></span>
+      <span class="wm-roman">Dastar</span>
+    </a>
+    <nav class="primary">
+      <a href="#" class="nav-link active">Poets</a>
+      <a href="#" class="nav-link">Forms</a>
+      <a href="#" class="nav-link">Books</a>
+      <a href="#" class="nav-link">Translations</a>
+      <a href="#" class="nav-link">About</a>
+    </nav>
+    <button class="theme-toggle" id="themeBtn">Dark</button>
+  </div>
+</header>
+
+<main>
+  <div class="intro-eyebrow">Featured today</div>
+  <h1 class="intro-title">Two poems by Rahman Baba</h1>
+  <p class="intro-blurb">
+    From the Diwan of Rahman Baba, the most beloved Pashto Sufi poet of the
+    17th century. Each couplet is shown in English beside the original Pashto.
+    Click <em>Show Urdu</em> on any poem to add an Urdu translation column.
+    English translations are by Fayez M. Sahibzada, from
+    <em>Mystical Reflections: Selections from the Poetry of Rahman Baba</em>
+    (2017), used with his permission.
+  </p>
+
+  {poems.map((poem, pi) => (
+    <section class="poem-section">
+      <div class="poem-head">
+        <div>
+          <div class="poet-line">by <a href="#" class="poet-ref">{poem.poetRoman}</a> &middot; {poem.poetYears}</div>
+          <h2 class="poem-title">
+            <span class="nasta-title">{poem.titlePashto}</span>
+            {poem.titleEnglish && <span class="eng-title">{poem.titleEnglish}</span>}
+          </h2>
+        </div>
+        <div class="meta-chips">
+          <span class="chip">{poem.form}</span>
+          <span class="chip warm">{poem.theme}</span>
+          <span class="chip plain">{poem.era}</span>
+        </div>
+      </div>
+
+      <div class="urdu-toggle-wrap">
+        <button class="urdu-btn" data-urdu-toggle={pi}>
+          <span class="nasta">اردو</span>
+          <span class="label-text">Show Urdu</span>
+        </button>
+      </div>
+
+      <div class="poem-wrap" id={`poem-${pi}`}>
+        <div class="poem-header-row">
+          <div class="col-label urdu-label rtl">اردو</div>
+          <div class="col-label">English</div>
+          <div class="col-label rtl">پښتو</div>
+        </div>
+        {poem.lines.map((line) => (
+          <div class="couplet">
+            <p class="line urdu" dir="rtl" lang="ur">{line.urdu}</p>
+            <p class="line english">{line.english}</p>
+            <p class="line pashto" dir="rtl" lang="ps">{line.pashto}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="source">
+        <strong>Source</strong>{poem.source}
+      </div>
+    </section>
+  ))}
+
+  <div class="below">
+    <aside class="side-card">
+      <h3>About the poet</h3>
+      <div class="poet-name"><span class="pname-nasta">رحمان بابا</span><span class="pname-roman">Rahman Baba</span></div>
+      <div class="poet-years">c. 1653 – 1711 &middot; Peshawar</div>
+      <p class="poet-bio">
+        Abdur Rahman Baba is the most beloved Pashto Sufi poet of the 17th
+        century. Son of Abdul Sattar Khan Mohmand, born in Bahadur village
+        south of Peshawar, he studied Islamic jurisprudence and Sufism in
+        Peshawar and Kohat before returning to Hazar Khanay where he lived
+        until his death. His <em>Diwan</em> remains a cornerstone of Pashtun
+        literary and spiritual life.
+      </p>
+      <div class="poet-stats">
+        <div class="stat"><strong>2</strong><span>Poems</span></div>
+        <div class="stat"><strong>3</strong><span>Scripts</span></div>
+        <div class="stat"><strong>0</strong><span>Recitations</span></div>
+      </div>
+    </aside>
+
+    <aside class="side-card related">
+      <h3>More by Rahman Baba</h3>
+      <ul>
+        {relatedPoems.map((p) => (
+          <li>
+            <a href="#">
+              <div>
+                <div class="first-line">{p.first}</div>
+                <div class="trans">{p.trans}</div>
+              </div>
+              <span class="form-badge">{p.form}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href="#" class="see-all">See all 343 poems</a>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <span class="foot-nasta">دستار</span>
+      <span class="foot-roman">Dastar</span>
+    </div>
+    <p class="foot-tag">A library of Pashto literature</p>
+    <p class="foot-sub">Est. 2026 &middot; English translations by Fayez M. Sahibzada, used with permission</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.urdu-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = btn.getAttribute('data-urdu-toggle');
+      const wrap = document.getElementById('poem-' + idx);
+      const label = btn.querySelector('.label-text');
+      const on = wrap.classList.toggle('show-urdu');
+      btn.classList.toggle('on', on);
+      label.textContent = on ? 'Hide Urdu' : 'Show Urdu';
+      try { localStorage.setItem('dastar-urdu-' + idx, on ? '1' : '0'); } catch {}
+    });
+    try {
+      const idx = btn.getAttribute('data-urdu-toggle');
+      if (localStorage.getItem('dastar-urdu-' + idx) === '1') {
+        btn.click();
+      }
+    } catch {}
+  });
+
+  const tbtn = document.getElementById('themeBtn');
+  function applyTheme(v) {
+    if (v === 'dark' || v === 'light') document.documentElement.setAttribute('data-theme', v);
+    else document.documentElement.removeAttribute('data-theme');
+    const isDark = v === 'dark' || (!v && matchMedia('(prefers-color-scheme: dark)').matches);
+    tbtn.textContent = isDark ? 'Light' : 'Dark';
+  }
+  let saved = null;
+  try { saved = localStorage.getItem('dastar-theme'); } catch {}
+  applyTheme(saved);
+  tbtn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('dastar-theme', next); } catch {}
+    applyTheme(next);
+  });
+</script>
+
+</body>
+</html>
